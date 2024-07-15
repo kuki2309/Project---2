@@ -1,0 +1,31 @@
+def count_words(input_text):
+    """
+    This function takes a string input and returns the word count.
+    """
+    if not input_text:
+        raise ValueError("Input cannot be empty.")
+    
+    # Splitting the input text into words and counting them
+    words = input_text.split()
+    return len(words)
+
+def main():
+    """
+    Main function to interact with the user and display the word count.
+    """
+    try:
+        # User-friendly interface to get input from the user
+        user_input = input("Please enter a sentence or paragraph: ").strip()
+        
+        # Counting words in the input
+        word_count = count_words(user_input)
+        
+        # Displaying the word count to the user
+        print(f"The input contains {word_count} words.")
+    
+    except ValueError as ve:
+        # Handling empty input error
+        print(f"Error: {ve}")
+
+if __name__ == "__main__":
+    main()
